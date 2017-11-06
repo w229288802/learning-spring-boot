@@ -1,0 +1,8 @@
+CREATE TABLE `NewTable` (
+`name`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
+`age`  int(11) NULL DEFAULT NULL
+)
+ENGINE=InnoDB
+DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
+ROW_FORMAT=COMPACT;
+
