@@ -4,9 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Chapter4pplication {
+@SuppressWarnings("all")
+public class Chapter4Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Chapter4pplication.class, args);
+		SpringApplication.run(Chapter4Application.class, args);
 	}
 }

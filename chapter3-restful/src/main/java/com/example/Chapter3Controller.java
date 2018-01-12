@@ -10,6 +10,7 @@ import java.util.*;
  */
 @RestController
 @RequestMapping(value="/users")     // 通过这里配置使下面的映射都在/users下
+@SuppressWarnings("all")
 public class Chapter3Controller {
 
     // 创建线程安全的Map 

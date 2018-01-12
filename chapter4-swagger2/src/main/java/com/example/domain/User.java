@@ -1,8 +1,19 @@
 package com.example.domain;
 
-public class User {
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
+@ApiModel(description = "用户对象")
+@SuppressWarnings("all")
+public class User {
+    @ApiModelProperty(value = "主键")
     private Long id;
+
+    @ApiModelProperty(value = "名称")
+    private String name;
+
+    @ApiModelProperty(value = "年龄")
+    private Integer age;
 
     public String getName() {
         return name;
@@ -27,10 +38,4 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-
-    private String name;
-    private Integer age; 
-
-    // 省略setter和getter 
-
 }

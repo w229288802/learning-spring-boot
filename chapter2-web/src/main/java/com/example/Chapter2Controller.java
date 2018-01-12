@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.io.IOException;
 
 @Controller
+@SuppressWarnings("all")
 public class Chapter2Controller {
     @RequestMapping("/")
     public String index(ModelMap map) throws IOException {

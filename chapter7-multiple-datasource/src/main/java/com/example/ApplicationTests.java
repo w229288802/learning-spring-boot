@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(Chapter7Application.class)
+@SuppressWarnings("all")
 public class ApplicationTests {
 
 	@Autowired
