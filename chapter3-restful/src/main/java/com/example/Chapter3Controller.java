@@ -9,7 +9,7 @@ import java.util.*;
  * Spring Boot构建RESTful API与单元测试
  */
 @RestController
-@RequestMapping(value="/users")     // 通过这里配置使下面的映射都在/users下
+@RequestMapping(value="/users")     // 通过这里配置不与swagger2冲突
 @SuppressWarnings("all")
 public class Chapter3Controller {
 
