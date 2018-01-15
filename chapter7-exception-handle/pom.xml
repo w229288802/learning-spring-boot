@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>chapter7-exception-handler</artifactId>
+	<artifactId>chapter7-exception-handle</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>chapter7-exception-handler</name>
+	<name>chapter7-exception-handle</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
