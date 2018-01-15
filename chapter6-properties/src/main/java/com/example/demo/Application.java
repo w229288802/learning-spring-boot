@@ -24,7 +24,11 @@ import java.util.Properties;
 public class Application {
 
 	public static void main(String[] args) throws IOException {
-		SpringApplication.run(Application.class, args);
+		//--spring.profiles.active=prod
+		SpringApplication springApplication = new SpringApplication(Application.class);
+		springApplication.setAddCommandLineProperties(false);
+		springApplication.run(args);
+		//SpringApplication.run(Application.class, args);
 		//Properties properties = PropertiesLoaderUtils.loadAllProperties("dev/common.properties");
 		//log.info(properties.toString());
 	}
