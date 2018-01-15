@@ -12,6 +12,7 @@ import java.io.IOException;
 @SpringBootApplication
 @EnableConfigurationProperties(CommonProperties.class)
 @PropertySources(
+		//不支持通配符
 		@PropertySource("classpath:/${spring.profiles.active}/common.properties")
 )
 public class Bootstrap {
