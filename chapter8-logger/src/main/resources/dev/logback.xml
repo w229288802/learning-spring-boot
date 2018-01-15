@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- 控制台输出格式,颜色相关 https://logback.qos.ch/manual/layouts.html#coloring -->
+	<property name="CONSOLE_LOG_PATTERN"
+			  value="%boldYellow(%date{yyyy-MM-dd HH:mm:ss.SSS}) | %-5level | %boldCyan(%-8thread) | %boldYellow(%-40logger{40}) : %highlight(%msg%n)"/>
+
+	<!-- 控制台输出配置 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder charset="utf-8">
+			<Pattern>${CONSOLE_LOG_PATTERN}</Pattern>
+		</encoder>
+	</appender>
+
+	<!-- INFO 输出配置 -->
+	<appender name="DRUID" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>logs/druid.log</File>
+		<encoder>
+			<Pattern>[%date] [%-5level] [%thread] %logger %line %msg%n</Pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/druid-%d{yyyyMMdd}-%i.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>500MB</maxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="EHCACHE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>logs/ehcache.log</File>
+		<encoder>
+			<Pattern>[%date] [%-5level] [%thread] %logger %line %msg%n</Pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/ehcache-%d{yyyyMMdd}-%i.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>500MB</maxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+
+	<!-- 第三方 jar 日志输出配置 -->
+	<!--<logger name="org.springframework.web.servlet.DispatcherServlet" level="INFO"/>
+	<logger name="org.springframework.web.context.support.XmlWebApplicationContext" level="INFO"/>
+	<logger name="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" level="INFO"/>
+	<logger name="com.alibaba.dubbo.registry.zookeeper.ZookeeperRegistry" level="INFO"/>
+	<logger name="com.alibaba.dubbo.config.AbstractConfig" level="INFO"/>
+	<logger name="org.apache.commons" level="INFO"/>-->
+
+	<!-- 日志输出适配器配置 -->
+	<root level="INFO" >
+		<appender-ref ref="STDOUT"/>
+	</root>
+
+	<logger name="net.sf.ehcache.Cache" level="INFO" >
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
+	<logger name="net.sf.ehcache" level="DEBUG" additivity="false" >
+		<appender-ref ref="EHCACHE"/>
+	</logger>
+
+	<logger name="druid.sql" level="DEBUG" additivity="false" >
+		<appender-ref ref="DRUID"/>
+	</logger>
+
+
+
+</configuration>
