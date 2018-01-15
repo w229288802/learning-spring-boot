@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>chapter3-restful</artifactId>
+	<artifactId>chapter2-test-restful</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>chapter3-restful</name>
+	<name>chapter2-test-restful</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
