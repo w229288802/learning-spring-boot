@@ -8,7 +8,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class Chapter1HellowordApplicationTests {
+public class Chapter1HelloWordApplicationTests {
 	private MockMvc mvc;
 
 	@Test
