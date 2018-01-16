@@ -12,15 +12,15 @@
 	</appender>
 
 	<!-- INFO 输出配置 -->
-	<appender name="DRUID" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>logs/druid.log</File>
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>logs/logs.log</File>
 		<encoder>
 			<Pattern>[%date] [%-5level] [%thread] %logger %line %msg%n</Pattern>
 			<charset>UTF-8</charset>
 		</encoder>
 
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>logs/druid-%d{yyyyMMdd}-%i.log</fileNamePattern>
+			<fileNamePattern>logs/logs-%d{yyyyMMddHHmmss}-%i.log</fileNamePattern>
 			<maxHistory>30</maxHistory>
 			<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<maxFileSize>500MB</maxFileSize>
@@ -28,21 +28,16 @@
 		</rollingPolicy>
 	</appender>
 
-	<appender name="EHCACHE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>logs/ehcache.log</File>
-		<encoder>
-			<Pattern>[%date] [%-5level] [%thread] %logger %line %msg%n</Pattern>
-			<charset>UTF-8</charset>
-		</encoder>
+	<!-- 日志输出适配器配置 -->
+	<root level="INFO" >
+		<appender-ref ref="STDOUT"/>
+		<appender-ref ref="FILE"/>
+	</root>
 
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>logs/ehcache-%d{yyyyMMdd}-%i.log</fileNamePattern>
-			<maxHistory>30</maxHistory>
-			<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-				<maxFileSize>500MB</maxFileSize>
-			</TimeBasedFileNamingAndTriggeringPolicy>
-		</rollingPolicy>
-	</appender>
+	<!-- spring日志只输出到console -->
+	<logger name="org.springframework" level="INFO" additivity="false">
+		<appender-ref ref="STDOUT"/>
+	</logger>
 
 	<!-- 第三方 jar 日志输出配置 -->
 	<!--<logger name="org.springframework.web.servlet.DispatcherServlet" level="INFO"/>
@@ -51,24 +46,5 @@
 	<logger name="com.alibaba.dubbo.registry.zookeeper.ZookeeperRegistry" level="INFO"/>
 	<logger name="com.alibaba.dubbo.config.AbstractConfig" level="INFO"/>
 	<logger name="org.apache.commons" level="INFO"/>-->
-
-	<!-- 日志输出适配器配置 -->
-	<root level="INFO" >
-		<appender-ref ref="STDOUT"/>
-	</root>
-
-	<logger name="net.sf.ehcache.Cache" level="INFO" >
-		<appender-ref ref="STDOUT"/>
-	</logger>
-
-	<logger name="net.sf.ehcache" level="DEBUG" additivity="false" >
-		<appender-ref ref="EHCACHE"/>
-	</logger>
-
-	<logger name="druid.sql" level="DEBUG" additivity="false" >
-		<appender-ref ref="DRUID"/>
-	</logger>
-
-
 
 </configuration>
