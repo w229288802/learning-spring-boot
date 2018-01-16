@@ -1,4 +1,4 @@
-package com.example.domain;
+package com.example.demo.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +7,7 @@ import javax.persistence.Id;
 @Entity
 public class User {
     public User(){};
-    public User(String name,int age){
+    public User(String name, int age){
         this.name = name;
         this.age = age;
     }
