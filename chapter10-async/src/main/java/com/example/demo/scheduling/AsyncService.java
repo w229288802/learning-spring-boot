@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.Random;
 
 @Component
-public class SchedulingService {
+public class AsyncService {
     public static Random random =new Random();
 
     @Async
