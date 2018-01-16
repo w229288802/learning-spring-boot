@@ -2,6 +2,10 @@ package com.example.demo.Service;
 
 public interface UserService {
     /**
+     * 初始化
+     */
+    void init();
+    /**
      * 新增一个用户
      * @param name
      * @param age

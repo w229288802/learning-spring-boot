@@ -17,6 +17,7 @@ public class Chapter11JdbcTemplateApplicationTests {
 	private UserService userSerivce;
 	@Before
 	public void setUp() {
+		userSerivce.init();
 		// 准备，清空user表
 		userSerivce.deleteAllUsers();
 	}
