@@ -1,4 +1,4 @@
-package com.example;
+package com.example.controller;
 
 import com.example.domain.User;
 import io.swagger.annotations.ApiImplicitParam;

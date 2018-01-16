@@ -1,12 +1,12 @@
-package com.example.demo;
+package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Chapter5CustomStarterApplication {
+public class Bootstrap {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Chapter5CustomStarterApplication.class, args);
+		SpringApplication.run(Bootstrap.class, args);
 	}
 }
