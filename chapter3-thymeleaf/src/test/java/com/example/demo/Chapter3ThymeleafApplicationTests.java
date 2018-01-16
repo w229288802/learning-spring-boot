@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.controller.Chapter2Controller;
+import com.example.demo.controller.Chapter3Controller;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,16 +16,21 @@ import static org.hamcrest.Matchers.equalTo;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class Chapter2TestRestfulApplicationTests {
-	MockMvc mvc;
+public class Chapter3ThymeleafApplicationTests {
+
+	private MockMvc mvc;
+
+	@Test
+	public void contextLoads() {
+	}
 
 	@Before
 	public void setUp() throws Exception {
-		mvc = MockMvcBuilders.standaloneSetup(new Chapter2Controller()).build();
+		mvc = MockMvcBuilders.standaloneSetup(new Chapter3Controller()).build();
 	}
 
 	@Test
-	public void contextLoads() throws Exception {
+	public void getHello() throws Exception {
 		mvc.perform(MockMvcRequestBuilders.get("/test").accept(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.content().string(equalTo("hello")));
