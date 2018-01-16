@@ -15,7 +15,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class Chapter2TestApplicationTests {
+public class Chapter3ThymeleafApplicationTests {
 
 	private MockMvc mvc;
 
@@ -25,7 +25,7 @@ public class Chapter2TestApplicationTests {
 
 	@Before
 	public void setUp() throws Exception {
-		mvc = MockMvcBuilders.standaloneSetup(new Chapter2Controller()).build();
+		mvc = MockMvcBuilders.standaloneSetup(new Chapter3Controller()).build();
 	}
 
 	@Test
