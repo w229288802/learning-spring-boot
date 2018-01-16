@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import javax.annotation.PostConstruct;
 
 @SpringBootApplication
-public class Chapter1HelloWordApplication {
+public class Boostrap {
 
 	@PostConstruct
 	public void init(){
@@ -14,6 +14,6 @@ public class Chapter1HelloWordApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(Chapter1HelloWordApplication.class, args);
+		SpringApplication.run(Boostrap.class, args);
 	}
 }
